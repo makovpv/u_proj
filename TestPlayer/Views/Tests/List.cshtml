@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DomainModel.Entities.Test>
+@using TestPlayer.HtmlHelpers
+
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Тесты";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Tests")
+
+    
+    
+
+    <label>my label</label>
+    @Html.ActionLink("Go to block list", "GoToBlock")
+    @Html.ActionLink("go to list", "abc", "UserAcc")
+    @Html.ActionLink("go to Scales", "list", "Scales", new {idTest = 10}, null);
+    
+    
+    @*@Html.RenderAction("Test", );*@
+</p>
+@*<table>
+    <tr>
+        <th>
+            name
+        </th>
+        <th>
+            author
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.author)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>*@
+
+@foreach (var item in Model)
+{ 
+    Html.RenderPartial("TestSummary", item);
+    
+    @*@{Html.RenderPartial("TestSummary", item);}*@
+    @*@{Html.RenderPartial("TestSummary", Model);}     *@
+    @*@{Html.RenderPartial("TestSummary");}          *@
+
+}
+
+<div class="pager">
+@Html.PageLinks((int)ViewData["CurrentPage"], (int)ViewData["TotalPages"],
+        x => Url.Action("List", new { page = x}))
+</div>

@@ -1,0 +1,12 @@
+﻿@model DomainModel.Entities.Test
+
+<div class="item">
+  <h3>@Model.name</h3>
+  @Model.author
+  <h4>@Model.id.ToString()</h4>
+
+  @Html.ActionLink("go to Scales", "list", "Scales", new {@Model.id }, null);
+  @Html.ActionLink("Editor", "edit", "Tests", new {@Model.id }, null);
+
+  @*<input type="submit" value="Go to block" />*@
+</div>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>@ViewBag.Title</title>
+    @*<link rel="Stylesheet" href= "../../Content/Styles.css" />*@
+    <link rel="Stylesheet" href= "/Content/Styles.css" />
+</head>
+<body>
+    <div id="header">
+        <div class="title">TestPlayer</div>
+    </div>
+    <div id="categories">
+        @*@if (@ViewData["CurrentCategory"] == null)
+        
+            "ALL TEST".ToString();
+        
+        else
+        
+            @Html.Encode(ViewData["CurrentCategory"];*@
+        
+         
+        
+        @string.IsNullOrEmpty((string)@ViewData["CurrentCategory"]) ? "All test" : @Html.Encode(ViewData["CurrentCategory"])
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model DomainModel.Entities.Scale
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Save", "Scales"))
+{
+    <h2>Edit</h2>
+    <h4>Наименование</h4>
+    @Html.TextBoxFor(Model => Model.name);
+    
+    @Html.HiddenFor(Model => Model.Id);    
+    @Html.HiddenFor(Model => Model.test_id);    
+                        
+    <input type="submit" value="DO Edit" />    
+    
+    
+    <div>
+    
+    @{List<SelectListItem> my_list = new List<SelectListItem>();
+      for (int i = 0; i < 10; i++)
+      {
+          my_list.Add(new SelectListItem() { Text = i.ToString() });
+      }
+    }
+    
+    @*@Html.DropDownListFor(Model=> Model.ScoreCalcType, my_list)*@
+    </div>
+    
+}
+
+
+
+

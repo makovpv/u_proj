@@ -1,0 +1,15 @@
+﻿@model DomainModel.Entities.Test
+           
+@{
+    ViewBag.Title = @Model.name;
+}
+
+<h2>@Model.name</h2>
+
+@Html.ActionLink("common", "show_common")
+@Html.ActionLink("items", "show_common")
+@Html.ActionLink("Шкалы", "list", "Scales", new {id=@Model.id}, null);
+<hr />
+@Html.Label(@Model.name);<br/>
+@Html.Label(@Model.author);<br/>
+

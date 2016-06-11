@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DomainModel.Entities.Scale>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@foreach (var itm in Model)
+{ 
+    @Html.ActionLink(@itm.name, "edit", "Scales", new { @itm.Id }, null);
+    <br/>
+}
+
+<hr />
+
+@{
+    var mygrid = new WebGrid(source: Model, rowsPerPage: 20, canSort: true);
+}
+
+@mygrid.GetHtml(tableStyle: "grid", headerStyle: "head",
+    columns: mygrid.Columns(
+    mygrid.Column(format: (item) => Html.ActionLink("редакт", "Edit", new { id=item.Id})),
+    mygrid.Column("Name", "Name", canSort:true),
+                mygrid.Column("abreviature", "abreviature", canSort: true),
+    mygrid.Column("test_id", "test_id",canSort:true)
+    )
+    )
