@@ -16,10 +16,18 @@ namespace DomainModel.Concrete
             get { return scaleTable; }
         }
 
+        public IQueryable<ScoreCalcType> ScoreCalcTypes
+        {
+            get { return scorecalctypeTable; }
+        }
+        private Table<ScoreCalcType> scorecalctypeTable;
+
+
         private Table<Scale> scaleTable;
         public SQLScalesRepository(string ConnectionString)
         {
             scaleTable = (new DataContext(ConnectionString)).GetTable<Scale>();
+            scorecalctypeTable = (new DataContext(ConnectionString)).GetTable<ScoreCalcType>();
         }
 
         public void SaveToDB (Scale pScale)

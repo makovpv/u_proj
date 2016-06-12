@@ -19,9 +19,21 @@ namespace DomainModel.Entities
         [Column] public string Formula { get; set; }
         [Column] public string abreviature { get; set; }
 
+        [Column]
+        public object ScoreCalcType { get; set; }
+
+        
+
         //[Column(CanBeNull = true, DbType = "smallint")]
         //public System.Nullable<int> max_value { get;set;}
-        
-        
+    }
+
+    [Table(Name = "ScoreCalcType")]
+    public class ScoreCalcType
+    {
+        [Column (IsPrimaryKey = true)]
+        public byte id { get; set; }
+        [Column]
+        public string name { get; set; }
     }
 }

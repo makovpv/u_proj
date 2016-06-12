@@ -9,6 +9,7 @@ namespace DomainModel.Abstract
     public interface IScalesRepository
     {
         IQueryable<Scale> Scales { get; }
+        IQueryable<ScoreCalcType> ScoreCalcTypes {get;}
 
         void SaveToDB(Scale qq);
     }

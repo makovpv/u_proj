@@ -16,6 +16,9 @@ namespace DomainModel.Entities
         [Column]public string author { get; set; }
         [Column]public string tags { get; set; }
 
+
+        public IQueryable<Scale> Scales { get; set; }
+
         //public void Create()
         //{ 
         //}

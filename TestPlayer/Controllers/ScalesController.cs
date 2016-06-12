@@ -13,6 +13,8 @@ namespace TestPlayer.Controllers
         //
         // GET: /Scales/
 
+        
+
         public ActionResult Index()
         {
             return View();
@@ -45,7 +47,14 @@ namespace TestPlayer.Controllers
         public ViewResult Edit(int id)
         {
             Scale sc = scalesRepository.Scales.Where(p => p.Id == id).FirstOrDefault();
-            return View(sc);
+            
+            ViewBag.abc = new SelectList(scalesRepository.ScoreCalcTypes, "id", "name");
+            //ViewBag.abc = new SelectList(scalesRepository.ScoreCalcTypes);
+            //ViewBag.abc = new SelectList(scalesRepository.Scales, "id","name"); --- it works
+            ViewBag.ScoreCalcType = new SelectList(scalesRepository.ScoreCalcTypes, "id", "name");
+                
+            //return View(sc);
+            return View();
         }
         
         
