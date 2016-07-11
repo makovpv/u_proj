@@ -9,5 +9,6 @@ namespace DomainModel.Abstract
     public interface IBlocksRepository
     {
         IQueryable<Block> Blocks { get; }
+        Block GetBlockByID(int BlockID);
     }
 }

@@ -49,12 +49,13 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BlocksController.cs" />
+    <Compile Include="Controllers\ScalesControllerTest.cs" />
     <Compile Include="Controllers\TestsControllerTests.cs" />
     <Compile Include="PageHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

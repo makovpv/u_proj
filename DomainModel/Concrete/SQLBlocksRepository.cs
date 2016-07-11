@@ -20,5 +20,10 @@ namespace DomainModel.Concrete
         {
             get { return blocksTable; }
         }
+
+        public Block GetBlockByID(int BlockID)
+        {
+            return null; // wtf
+        }
     }
 }

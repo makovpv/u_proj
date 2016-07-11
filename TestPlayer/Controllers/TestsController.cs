@@ -48,6 +48,12 @@ namespace TestPlayer.Controllers
             return View(tst);
         }
 
+        public ViewResult Info(int id)
+        {
+            
+            return View();
+        }
+
         public void Create()
         {
         }

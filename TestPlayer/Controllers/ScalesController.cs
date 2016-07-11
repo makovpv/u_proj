@@ -53,8 +53,8 @@ namespace TestPlayer.Controllers
             //ViewBag.abc = new SelectList(scalesRepository.Scales, "id","name"); --- it works
             ViewBag.ScoreCalcType = new SelectList(scalesRepository.ScoreCalcTypes, "id", "name");
                 
-            //return View(sc);
-            return View();
+            return View(sc);
+            //return View();
         }
         
         

@@ -6,7 +6,6 @@ using NUnit.Framework;
 using TestPlayer.HtmlHelpers;
 using System.Web.Mvc;
 
-
 namespace TestPlayer.Tests
 {
     

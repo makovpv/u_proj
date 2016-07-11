@@ -20,7 +20,7 @@ namespace DomainModel.Entities
         [Column] public string abreviature { get; set; }
 
         [Column]
-        public object ScoreCalcType { get; set; }
+        public byte ScoreCalcType { get; set; }
 
         
 

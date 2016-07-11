@@ -6,7 +6,9 @@
 
 <h2>@Model.name</h2>
 
-@Html.ActionLink("common", "show_common")
+
+<hr />
+@Html.ActionLink("common", "Info", new { id = @Model.id })
 @Html.ActionLink("items", "show_common")
 @Html.ActionLink("Шкалы", "list", "Scales", new {id=@Model.id}, null);
 <hr />
