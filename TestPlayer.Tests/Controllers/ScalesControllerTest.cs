@@ -30,6 +30,15 @@ namespace TestPlayer.Tests.Controllers
             my_scales = (IQueryable<Scale>)aa.Model;
             Assert.AreEqual(my_scales.Count(), 0);
         }
+        
+        [Test]
+        public void testForSave()
+        {
+            //IScalesRepository rep = MockScalesRepository(
+            //    new Scale() { name = "Первая шкала", Id = 10, test_id = 1, ScoreCalcType = -1 }
+            //    );
+            //ScalesController scl_contr = new ScalesController(rep);
+        }
 
         static IScalesRepository MockScalesRepository(params Scale[] scales)
         {

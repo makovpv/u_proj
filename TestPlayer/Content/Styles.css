@@ -20,3 +20,12 @@ DIV.item
     border-top-width: 1px;
     padding-top: .7em; margin-bottom: .7em;
 }
+/*------------------------------------------------------------------------*/
+my_grd_col
+{
+    background-color: Green;
+}
+css_test
+{
+    background-color: Green;
+}

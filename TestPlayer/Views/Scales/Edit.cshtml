@@ -1,35 +1,68 @@
 ﻿@model DomainModel.Entities.Scale
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Редактор шкалы";
 }
 
+@Html.ActionLink("Перейти к списку", "List", new { id = Model.test_id })
 <h2>Edit</h2>
+
+
 @using (Html.BeginForm("Save", "Scales"))
 {
-    <h4>
-    Наименование
-    @Html.TextBoxFor(Model => Model.name)
-    <br/>
-    Аббревиатура
-    @Html.TextBoxFor(Model => Model.abreviature)
-    <br/>
-    Описание
-    @Html.TextBoxFor(Model => Model.Description)
-    <br/>
-    Формула
-    @Html.TextBoxFor(Model => Model.Formula)
-    </h4>
     
-    @Html.HiddenFor(Model => Model.Id);    
-    @Html.HiddenFor(Model => Model.test_id);    
+    <table>
+    <tr>
+    <td>
+    @Html.LabelForModel("Наименование")
+    </td>
+    <td>
+    @Html.TextBoxFor(MM=>MM.name)</td>
+    </tr>
+    <tr>
+    <td>Аббревиатура</td>
+    <td>@Html.TextBoxFor(MM=> MM.abreviature, new { @class = "css_test" })</td>
+    </tr>
+    <tr><td>Описание</td>
+    <td>@Html.TextBoxFor(MM=> MM.Description)</td>
+    </tr>
+    <tr>
+    <td>@Html.Label("Формула")</td>
+    <td>@Html.TextBoxFor(MM=> MM.Formula)</td>
+    </tr>
+    <tr>
+    <td>@Html.Label("Тип расчета Т-балла")</td>
+    <td>@Html.DropDownList("ScoreCalcType")</td>
+    </tr>
+    <tr>
+    <td>Главная шкала</td>
+    </tr>
+    <tr>
+    <td>Параметр</td>
+    </tr>
+    <tr>
+    <td>Параметр 2</td>
+    </tr>
+    <tr>
+    <td>Среднее значение</td>
+    </tr>
+    <tr>
+    <td>Стандартное отклонение</td>
+    </tr>
+    <tr>
+    <td>Минимальный Т-балл</td>
+    <td>@Html.TextBoxFor(MM=> MM.Min_Value)</td>
+    </tr>
+    <tr>
+    <td>Максимальный Т-балл</td>
+    <td>@Html.TextBoxFor(MM=> MM.Max_Value)</td>
+    </tr>
+    </table>
     
+    @Html.HiddenFor(mm=> mm.Id);
+    @Html.HiddenFor(mm=> mm.test_id);
+
     <div>
-
-    @Html.LabelFor(model => model.ScoreCalcType, "Тип расчета")
-
-    @Html.DropDownList("ScoreCalcType")
-    
     @*@{List<SelectListItem> my_list = new List<SelectListItem>();
       for (int i = 0; i < 10; i++)
       {
@@ -41,10 +74,19 @@
 
     @*@Html.DisplayFor(Model=> Model.ScoreCalcType.name )*@
     </div>
-
-    <input type="submit" value="DO Edit" />    
-    <input type="button" value="go back (cancel)" />
+    
+    <hr/>    
+    <input type="submit" value="DO Edit" />
 }
+
+
+
+
+
+
+
+
+
 
 
 
