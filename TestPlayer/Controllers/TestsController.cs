@@ -48,6 +48,12 @@ namespace TestPlayer.Controllers
             return View(tst);
         }
 
+        public ViewResult Play(int id) // SubjectID
+        {
+            //DomainModel.Entities.Test tst = testsRepository.Tests.Where(p => p.id == id).FirstOrDefault();
+            return View(id);
+        }
+
         public ViewResult Info(int id)
         {
             

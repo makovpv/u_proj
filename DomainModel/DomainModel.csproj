@@ -50,7 +50,9 @@
     <Compile Include="Concrete\SQLScalesRepository.cs" />
     <Compile Include="Concrete\SQLTestsRepository.cs" />
     <Compile Include="Entities\Block.cs" />
+    <Compile Include="Entities\Idea.cs" />
     <Compile Include="Entities\Scale.cs" />
+    <Compile Include="Entities\Subject.cs" />
     <Compile Include="Entities\Test.cs" />
     <Compile Include="Entities\UserAcc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
