@@ -54,6 +54,12 @@ namespace TestPlayer.Controllers
             return View(id);
         }
 
+        //[System.Web.Services.WebMethod]
+        //public static string AAA(int id)
+        //{
+        //    return "RRR";
+        //}
+
         public ViewResult Info(int id)
         {
             
