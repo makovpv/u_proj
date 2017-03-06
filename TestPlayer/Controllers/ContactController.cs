@@ -48,7 +48,7 @@ namespace TestPlayer.Controllers
         }
         
         //needs to move to API controller
-        [Post]
+        [[HttpPost]]
         public void MyPostAction (string p_json_obj)
         {
         }
