@@ -47,6 +47,11 @@ namespace TestPlayer.Controllers
             return (System.IO.File.OpenText(HttpContext.Server.MapPath(@"~\Content\TestData.txt")).ReadToEnd());
         }
         
+        //needs to move to API controller
+        [Post]
+        public void MyPostAction (string p_json_obj)
+        {
+        }
 
     }
 }
