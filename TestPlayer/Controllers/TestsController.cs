@@ -87,6 +87,17 @@ namespace TestPlayer.Controllers
         {
             return View();
         }
+
+        public string Get5(int id)
+        {
+
+            DomainModel.Entities.Test tst = testsRepository.Tests.Where(p => p.id == id).FirstOrDefault();
+
+
+            System.Web.Script.Serialization.JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
+            //string ss = js.Serialize(tst);
+            return js.Serialize(tst);
+        }
         
     }
 }

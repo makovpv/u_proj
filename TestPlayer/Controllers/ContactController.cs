@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestPlayer.Models;
+using DomainModel.Abstract;
 
 namespace TestPlayer.Controllers
 {
@@ -46,9 +47,12 @@ namespace TestPlayer.Controllers
         {
             return (System.IO.File.OpenText(HttpContext.Server.MapPath(@"~\Content\TestData.txt")).ReadToEnd());
         }
+
+
+
         
         //needs to move to API controller
-        [[HttpPost]]
+        /////[[HttpPost]]
         public void MyPostAction (string p_json_obj)
         {
         }

@@ -1,22 +1,93 @@
 ﻿@model int
 
+
 @{
     ViewBag.Title = "Play";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
 }
 
-<h2>Play</h2>
-<h3>@Model</h3>
+
+<form ng-app="myApp" ng-controller="myCtrl" name="mainForm">
+	<div class="workarea">
+
+		<div ng-show="instruction_vis">
+			<p class="instruction">
+			{{instruction}}
+			</p>
+			<button ng-click="btnStartClick()">Начать тестирование</button>
+		</div>
+		
+		<div ng-show="!instruction_vis">
+			<div ng-show="item_vis">
+				ITEMMM
+				<p ng-bind="blocks[block_idx].items[ci_index].text"></p>
+				<!-- {{ '('+ items[ci_index].id + ') ' + items[ci_index].text }} -->
+			</div>
+			
+			<!-- одиночн.выбор (radio) -->
+			<div ng-show="blocks[block_idx].items[ci_index].dim.type == 1 && blocks[block_idx].items[ci_index].dim.mode == 2" class="answer">
+				<div>
+				<label ng-repeat="x in blocks[block_idx].items[ci_index].dim.subscl">
+					<input type='radio' data-ng-model="blocks[block_idx].items[ci_index].dim.sel" data-ng-value="x.id" ng-required="!blocks[block_idx].items[ci_index].dim.sel"/>
+					{{x.txt}}
+				</label>
+				</div>
+				
+				<!-- <span>
+					<label>выберите один из вариантов, пожалуйста</label>
+					<h1>{{mainForm.myInput.$valid}}</h1>
+				</span> -->
+			</div>
+			
+			<!-- одиночн.выбор (button) -->
+			<div ng-show="blocks[block_idx].items[ci_index].dim.type == 1 && blocks[block_idx].items[ci_index].dim.mode != 2" class="answer">
+				<div ng-repeat="x in blocks[block_idx].items[ci_index].dim.subscl">
+					<button ng-click="btnClickFun(x.id)">
+						{{x.txt}}
+					</button>
+				</div>
+			</div>
+			<!-- множ.выбор или сотрудники -->
+			<div ng-show="blocks[block_idx].items[ci_index].dim.type == 2 || blocks[block_idx].items[ci_index].dim.type == 13" class="answer">
+				<label ng-repeat="x in blocks[block_idx].items[ci_index].dim.subscl">
+					<input type='checkbox' data-ng-model="x.val" data-ng-checked="x.val"/>
+					{{x.txt}}
+				</label>
+				<div ng-show="!valid_answer" style="background-color:red">Необходимо выбрать один или несколько вариантов</div>	
+			</div>
+			
+			
+			<!-- открытй -->
+			<div ng-show="blocks[block_idx].items[ci_index].dim.type == 3" class="answer">
+				<input type="text" data-ng-model="blocks[block_idx].items[ci_index].dim.sel"/>
+				<br/>
+				<textarea rows="4" cols="50" ng-model="blocks[block_idx].items[ci_index].dim.sel"></textarea>
+			</div>
+			
+			<div ng-show="blocks[block_idx].items[ci_index].dim.time_restrict == 1">
+				{{counter}}
+			</div>
+
+			<p>
+				<button ng-click="btnPriorClick()" >prior</button>
+				<button ng-click="btnNextClick()" ng-show="!(blocks[block_idx].items[ci_index].dim.type == 1 && blocks[block_idx].items[ci_index].dim.mode == 1)">next</button>
+			</p>
+			
+		
+		</div>
+		<hr/>
+		<button ng-click="myFinFun()">FIN</button>
+    </div>
+</form>
 
 
-<button onclick="DoClick()">RRR</button>
+<div class="pg_footer">
+	<i class="fa fa-cloud" style="color:blue;"></i>
+	<i class="fa fa-heart" style="color:green;"></i>
+	<i class="fa fa-car"></i>
+	<i class="fa fa-file"></i>
+	<i class="fa fa-bars"></i>
+</div>
 
-<script type="text/javascript">
-    function DoClick() {
-        alert("hello everybody !");
-
-
-
-
-    }
-</script>
+<script src="..\..\scripts\myApp.js"></script>
 
