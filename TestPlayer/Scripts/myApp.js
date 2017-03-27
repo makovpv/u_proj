@@ -23,7 +23,7 @@ app.controller('myCtrl', function($scope, $interval, $http)
 					}
 				  };
 				  //xhttp.open("GET", "fun_library.asp", true);
-				  xhttp.open("GET", "tests/get5(1)", true);
+				  xhttp.open("GET", "../get5/1", true);
 				  xhttp.send();
 		};
 		function get_fake_data ()
